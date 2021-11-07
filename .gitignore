@@ -1,0 +1,6 @@
+.idea/
+.python-version
+__pycache__/
+animes/
+top_chart/
+top_anime_urls.txt
