@@ -19,5 +19,8 @@ PARSED_ANIME_PAGE_NAME = "anime_{}.tsv"  # The base name of the individual anime
 SEARCH_INFO_DIRECTORY = "search_info"  # Directory containing the anime's name, synopsis and url
 SEARCH_INFO_FILE_NAME = "anime_{}.txt"  # The base name of the individual animes' search info
 
+VOCABULARY_FILE = "vocabulary.txt"  # The name of the vocabulary file
+
+FIRST_INDEX_FILE = "first_index.txt"  # the name of the first index described in the homework
 
 VERBOSE = True  # Whether to log progress

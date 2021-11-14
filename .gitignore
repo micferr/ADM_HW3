@@ -2,7 +2,9 @@
 .python-version
 __pycache__/
 animes/
+first_index.txt
 parsed_animes/
 search_info/
 top_chart/
 top_anime_urls.txt
+vocabulary.txt

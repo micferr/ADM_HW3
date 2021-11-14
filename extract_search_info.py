@@ -33,7 +33,7 @@ def get_wordnet_pos(treebank_tag):
 
     return wordnet.NOUN  # default
 
-def lemmatize(synopsis: str) -> set[str]:
+def lemmatize(synopsis: str) -> list[str]:
     """Lemmatize a text returning a list of its lemmas and removing stopwords and punctuation."""
     stop_words = set(stopwords.words('english'))
     punctuation = set(char for char in string.punctuation)
@@ -48,7 +48,7 @@ def lemmatize(synopsis: str) -> set[str]:
         if word_and_pos[0] not in words_to_remove
     ]
 
-    return set(lemmatizer.lemmatize(word, get_wordnet_pos(pos)) for word, pos in words_and_poses)
+    return list(set(lemmatizer.lemmatize(word, get_wordnet_pos(pos)) for word, pos in words_and_poses))
 
 
 if __name__ == "__main__":
@@ -81,10 +81,10 @@ if __name__ == "__main__":
             synopsis = lemmatize(data[10]) if data else []
             url = urls[i]
 
-        with open(os.path.join(SEARCH_INFO_DIRECTORY, search_info_filename(i)), "w") as out_tsv:
-            tsv_writer = csv.writer(out_tsv, delimiter='\t')
-            tsv_writer.writerow(["animeTitle", "animeDescription", "Url"])
-            tsv_writer.writerow([title, synopsis, url])
+        with open(os.path.join(SEARCH_INFO_DIRECTORY, search_info_filename(i)), "w") as out_txt:
+            out_txt.write(title.strip() + "\n")
+            out_txt.write(url.strip() + "\n")
+            out_txt.write("\n".join(synopsis))
 
         if i%100 == 0:
             print(f"{i}/{len(files_to_parse)}...")
