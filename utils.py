@@ -1,7 +1,10 @@
+import csv
+import os
 from datetime import datetime
 from pathlib import Path
 
-from constants import TOP_CHARTS_PAGE_NAME, ANIME_PAGE_NAME, PARSED_ANIME_PAGE_NAME, SEARCH_INFO_FILE_NAME
+from constants import TOP_CHARTS_PAGE_NAME, ANIME_PAGE_NAME, PARSED_ANIME_PAGE_NAME, SEARCH_INFO_FILE_NAME, \
+    PARSED_ANIMES_DIRECTORY, TOP_ANIME_URLS_FILE
 
 
 def top_anime_filename(page):
@@ -44,6 +47,21 @@ def prepare_to_download(directory: str) -> int:
     directory = Path(directory)
     directory.mkdir(exist_ok=True)
     return len(list(directory.glob("*.html")))
+
+
+def retrieve_title_synopsis_and_url(i: int) -> tuple[str, str, str]:
+    """
+    Return the title, unprocessed synopsis and url of the i-th anime.
+    """
+    with open(TOP_ANIME_URLS_FILE, "r") as url_file:
+        urls = [url.strip() for url in url_file.readlines()]
+
+    with open(os.path.join(PARSED_ANIMES_DIRECTORY, parsed_anime_filename(i)), "r") as fin:
+        csv_reader = csv.reader(fin, delimiter="\t")
+        next(csv_reader)  # Skip headers
+        data = next(csv_reader)
+
+        return data[0], data[10], urls[i]
 
 
 class Anime:
