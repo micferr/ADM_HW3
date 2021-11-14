@@ -3,5 +3,6 @@
 __pycache__/
 animes/
 parsed_animes/
+search_info/
 top_chart/
 top_anime_urls.txt

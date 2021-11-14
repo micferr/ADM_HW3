@@ -16,4 +16,8 @@ ANIME_PAGE_NAME = "anime_{}.html"  # The base name of the individual animes' pag
 PARSED_ANIMES_DIRECTORY = "parsed_animes"  # The directory containing the anime_i.tsv files
 PARSED_ANIME_PAGE_NAME = "anime_{}.tsv"  # The base name of the individual animes' tsv files.
 
+SEARCH_INFO_DIRECTORY = "search_info"  # Directory containing the anime's name, synopsis and url
+SEARCH_INFO_FILE_NAME = "anime_{}.txt"  # The base name of the individual animes' search info
+
+
 VERBOSE = True  # Whether to log progress

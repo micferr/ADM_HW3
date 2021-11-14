@@ -1,7 +1,7 @@
 from datetime import datetime
 from pathlib import Path
 
-from constants import TOP_CHARTS_PAGE_NAME, ANIME_PAGE_NAME, PARSED_ANIME_PAGE_NAME
+from constants import TOP_CHARTS_PAGE_NAME, ANIME_PAGE_NAME, PARSED_ANIME_PAGE_NAME, SEARCH_INFO_FILE_NAME
 
 
 def top_anime_filename(page):
@@ -22,11 +22,16 @@ def anime_filename(index):
 
 def parsed_anime_filename(index):
     """
-    Return the filename for the file in which an individual anime's page is saved.
-
-    Animes are indexed by their position in the top chart, starting at 0.
+    Return the filename for the file in which an individual anime's parsed info is saved.
     """
-    return PARSED_ANIME_PAGE_NAME.format(f"{index:05}")  # Page can be up to 19129
+    return PARSED_ANIME_PAGE_NAME.format(f"{index:05}")
+
+
+def search_info_filename(index):
+    """
+    Return the filename for the file in which an individual anime's search info is saved.
+    """
+    return SEARCH_INFO_FILE_NAME.format(f"{index:05}")
 
 
 def prepare_to_download(directory: str) -> int:
