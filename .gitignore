@@ -2,5 +2,6 @@
 .python-version
 __pycache__/
 animes/
+parsed_animes/
 top_chart/
 top_anime_urls.txt

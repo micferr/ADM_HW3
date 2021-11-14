@@ -13,4 +13,7 @@ TOP_ANIME_URLS_FILE = "top_anime_urls.txt"  # The file in which to store the URL
 ANIMES_DIRECTORY = "animes"  # The directory in which to store the fetched individual animes' pages
 ANIME_PAGE_NAME = "anime_{}.html"  # The base name of the individual animes' pages.
 
+PARSED_ANIMES_DIRECTORY = "parsed_animes"  # The directory containing the anime_i.tsv files
+PARSED_ANIME_PAGE_NAME = "anime_{}.tsv"  # The base name of the individual animes' tsv files.
+
 VERBOSE = True  # Whether to log progress
