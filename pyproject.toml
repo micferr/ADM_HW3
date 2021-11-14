@@ -5,13 +5,14 @@ description = ""
 authors = ["Michele Ferraro <ferraro.1717025@studenti.uniroma1.it>"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.9,<3.11"
 spacy = "^3.1.0"
 beautifulsoup4 = "^4.10.0"
 requests = "^2.26.0"
 lxml = "^4.6.4"
 jupyter = "^1.0.0"
 nltk = "^3.6.5"
+scipy = "^1.7.2"
 
 [tool.poetry.dev-dependencies]
 

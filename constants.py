@@ -21,6 +21,7 @@ SEARCH_INFO_FILE_NAME = "anime_{}.txt"  # The base name of the individual animes
 
 VOCABULARY_FILE = "vocabulary.txt"  # The name of the vocabulary file
 
-FIRST_INDEX_FILE = "first_index.txt"  # the name of the first index described in the homework
+FIRST_INDEX_FILE = "first_index.txt"  # The name of the first index described in the homework
+SECOND_INDEX_FILE = "second_index.txt"  # The name of the second index described in the homework (tf-idf)
 
 VERBOSE = True  # Whether to log progress
